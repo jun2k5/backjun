@@ -28,7 +28,7 @@ C, C#, C++, JAVA, Node.js도 1번부터 시도할 것이다.
             //현재 깃 사용자 등록
 
         
-    애디터를 열고 작업파일 열기g
+    애디터실행 후 작업파일 열기
     Terminal에서 new Terminal 클릭
     명령어
         git init
