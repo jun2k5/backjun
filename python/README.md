@@ -38,6 +38,11 @@ C, C#, C++, JAVA, Node.js도 1번부터 시도할 것이다.
         git commit -m 'comment'
         git push origin master
 
+    에러 대처
+        error : failed to push some ..
+        푸시 실패 메시지가 나오면 pull로 내 로컬과 Git의 파일을 일치시키고 푸시할 것
+            git pull origin master
+
 2024-11-03
 
     Visual Code 단축키
@@ -48,3 +53,26 @@ C, C#, C++, JAVA, Node.js도 1번부터 시도할 것이다.
     바꾸고 싶은 공통된 단어 드래그
     Cntl + Shift + L
     한꺼번에 많은 공통 단어를 치환할 수 있다.
+
+    함수일 경우 F2를 사용하여 Rename할 수 있다.
+
+    Alt + 클릭하면 멀티 커서가 가능하다.
+
+    emmet 명령어 + tab html or css  
+    ex ) div>p*3 + tab
+        div.container>p.title*5 + tab
+        dn + tab
+        m10 + tab
+
+    ShortCuts
+    코드 하일라이트 = Cntl + L
+    휠 and 코드 워프 = Cntl + 방향키
+    코드 이동 and 파일탭 이동 = Alt + 방향키
+    행복사 = Alt + Shift + 방향키
+    파일 검색 & 이동 = Cntl + p
+    
+
+
+
+
+

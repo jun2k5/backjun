@@ -101,10 +101,8 @@ if __name__ == "__main__":
     #solution()
     #TimeTest()
     #if_TimeTest()
+
     #ifel_TimeTest()
-
-
-
 
 """
 -Learning Point
