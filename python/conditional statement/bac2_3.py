@@ -24,9 +24,13 @@ def solution():
     #윤년이 아니면
     print(0)
 
-
-
-
-
 if __name__ == "__main__":
     solution()
+
+
+
+"""
+-Learning Point
+    Python에서는 논리연산자를 && 대신 and를, || 대신 or을 사용한다.
+
+"""
