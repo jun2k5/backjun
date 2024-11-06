@@ -71,8 +71,41 @@ C, C#, C++, JAVA, Node.js도 1번부터 시도할 것이다.
     행복사 = Alt + Shift + 방향키
     파일 검색 & 이동 = Cntl + p
     
+2024-11-06
 
+    Git 명령어 2
 
+    커밋로그를 보여주는 Git 명령어
+        git log --oneline --all --graph
+
+    변경점을 알려주는 git 명령어
+        git diff
+
+    vim 모드로 변경점을 알려주는 git 명령어
+        git difftool
+
+    커밋 ID로 현재 파일과 커밋파일의 차이점을 비교하는 git 명령어
+        git difftool Commit_ID
+
+    브랜치 생성 - 복사본을 만들 수 있다.
+        git branch branch_name
+    
+    브랜치 이동
+        git switch branch_name
+
+    현재 브랜치 확인
+        git status
+
+    브랜치 합치기
+        메인 브랜치로 이동 후
+        git merge sub_branch_name
+
+    브랜치 합칠때 수정부분이 겹칠 경우, 충돌(conflict) 발생
+
+     Conflict 해결 방법
+        1. 원하는 코드만 남기고
+        2. git add .
+        3. git commit -m 'commit_message'
 
 
 
