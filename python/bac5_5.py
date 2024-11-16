@@ -13,6 +13,7 @@ def solution(N:int):
     S = input()
 
     for i in range(0, N):
+    #입력값 중에 숫자가 아닌 경우 종료
         try:
             result += int(S[i])
 
@@ -36,9 +37,9 @@ if __name__ == "__main__":
 
     solution(N)
 
-
-
-# ToDo : 5_4 5_5 주석달기
-
-
+"""
+-Learning Point
+사용자 입장에서 입력값이 엉망진창인 경우도 생각해보면
+코드를 좀 더 잘 작성할 수 있을것이다.
+"""
 
