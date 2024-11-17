@@ -18,6 +18,7 @@ def solution(S: list):
         print()
 
 if __name__ == "__main__":
+    #문제 입력
     N = int(input())
 
     for i in range(0,N):
@@ -26,4 +27,10 @@ if __name__ == "__main__":
 
 
 # ToDo. 11-17 : 5-6, 5-7 주석달것
+
+"""
+-Learning Point
+이중배열의 개념
+배열 안의 배열
+"""
 
