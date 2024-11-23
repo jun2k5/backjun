@@ -16,18 +16,18 @@ def solution(S:str):
     #입력값 소문자화
     S_lo = S.lower()
     #history보관 배열선언
-#     cache = []
-#     #중복알파벳보관 배열선언
-#     result = []
-# #    print(S_lo)
+    # cache = []
+    # #중복알파벳보관 배열선언
+    # result = []
+#    print(S_lo)
 
-#     #중복검사 For문``
-#     for i in range(0, len(S_lo)):
-#         #중복알파벳이면 result에 담기
-#         if S_lo[i] in cache:
-#             result.append(S_lo[i].upper())
-#         #검사 후 캐쉬에 담기
-#         cache.append(S_lo[i])
+    # #중복검사 For문``
+    # for i in range(0, len(S_lo)):
+    #     #중복알파벳이면 result에 담기
+    #     if S_lo[i] in cache:
+    #         result.append(S_lo[i].upper())
+    #     #검사 후 캐쉬에 담기
+    #     cache.append(S_lo[i])
 
 
     #중복된 알파벳들 담은 result배열
@@ -41,7 +41,7 @@ def solution(S:str):
         except:
             alpa_D[i] = 1
      
-#    print(alpa_D)
+    print(alpa_D)
 
     #최대 value값을 가진 key 리스트 생성
     end = [k for k,v in alpa_D.items() if max(alpa_D.values()) == v]
@@ -50,7 +50,7 @@ def solution(S:str):
         print("?")
         return
 
-    print(end.pop())
+    print(str(end.pop()).upper())
 
 if __name__ == "__main__":
     S = input()
