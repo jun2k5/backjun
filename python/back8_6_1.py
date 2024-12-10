@@ -47,7 +47,7 @@ def solution(S:int):
     while num > line:
         num -= line
         line += 1
-        print(f"num : {num}, line : {line}")
+#        print(f"num : {num}, line : {line}")
 
     if line % 2 == 0:
         bunja = num
