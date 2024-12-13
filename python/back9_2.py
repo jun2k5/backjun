@@ -25,7 +25,7 @@ def solution(N:int, K:int) -> None:
     for i in range(1, N+1):
         if N % i == 0:
             N_Y.append(i)
-    print(N_Y)
+#    print(N_Y)
 
     if K > len(N_Y):
         print(0)
