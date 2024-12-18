@@ -23,3 +23,5 @@ if __name__ == "__main__":
     B = int(input())
 
     print(solution(A, B))
+
+
