@@ -45,3 +45,11 @@ if __name__ == "__main__":
         S_y.append(y)
 
     solution(S_x, S_y)
+
+
+
+
+
+
+
+    
