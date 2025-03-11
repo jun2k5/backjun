@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KNU RENTAL-Share</title>
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="main.js"></script>
+</head>
+<body>
+    <header>
+        <h1>KNU RENTAL-Share</h1>
+    </header>
+    <div class="container">
+        <h5>로그인 정보 : </h5><h2 id="instructor"></h2>
+        <a href="regist.html" class="register-btn">Register Product</a>
+        <div class="product-list">
+            <div class="product-item">
+                <a>
+                    <img src="product1.jpg" alt="Product 1">
+                    <p>Rent Car</p>
+                    <div class = "product-info">
+                        <p>전화번호 : 010 1234 1234</p>
+                        <p>대여장소 : 경북대학교 5호관 주차장</P>
+                        <p>비용 \ day : 1 ETH</p>
+                    </div>
+                    <form class="register-form">
+                        <input type="number" placeholder="RantalDate" required>
+                        <input type="text" placeholder="PhonNum(000-0000-0000)" required>
+                        <button type="submit">대여</button>
+                        <button type="submit">반납</button>
+                    </form>
+                </a>
+            </div>
+            <div class="product-item">
+                <a>
+                    <img src="product2.jpg" alt="Product 2">
+                    <p>Rent Bag</p>
+                    <div class = "product-info">
+                        <p>전화번호 : 010 4567 8912</p>
+                        <p>대여장소 : 경애관 앞에서 전화</P>
+                        <p>비용 \ day : 1 ETH</p>
+                    </div>
+                    <form class="register-form">
+                        <input type="number" placeholder="RantalDate" required>
+                        <input type="text" placeholder="PhonNum(000-0000-0000)" required>
+                        <button type="submit">대여</button>
+                        <button type="submit">반납</button>
+                    </form>
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
