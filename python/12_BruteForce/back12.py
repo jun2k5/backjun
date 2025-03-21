@@ -29,7 +29,7 @@ def solution(N:int, M:int, L:list) -> None :
                 if L[i] + L[j] + L[k] <= M and L[i] + L[j] + L[k] > m_clo:
                     m_clo = L[i] + L[j] + L[k]
                 # print("j : " +f"{j}" + ", k : "+f"{k}" + ", m_clo : " + f"{m_clo}")
-                   
+                  
     print(m_clo)
     return
 
