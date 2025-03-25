@@ -16,28 +16,65 @@
 
 
 def solution(N:int, M:int, m_data:list):
-    cnt_w = 0 #W로 시작할 때
-    cnt_b = 0 #B로 시작할 때
+    chess_board_W =["WBWBWBWB",
+                    "BWBWBWBW",
+                    "WBWBWBWB",
+                    "BWBWBWBW",
+                    "WBWBWBWB",
+                    "BWBWBWBW",
+                    "WBWBWBWB",
+                    "BWBWBWBW"]
+    
+    chess_board_B = ["BWBWBWBW",
+                    "WBWBWBWB",
+                    "BWBWBWBW",
+                    "WBWBWBWB",
+                    "BWBWBWBW",
+                    "WBWBWBWB", 
+                    "BWBWBWBW", 
+                    "WBWBWBWB"]
 
-    for i in range(0, N):
-        for j in range(0, M):
-        # i 가 짝수일때 W 
-            if (i+j) % 2 == 0:
-                if m_data[i][j] != ['W']:
-                    cnt_w += 1
-                else:
-                    cnt_b += 1
+    min_cnt = 65 # 8*8 = 64
+
+    for i in range(0, N-7):
+        for j in range(0, M-7):
+            cnt_w = 0
+            cnt_b = 0
+
+            for p in range(0, 8):
+                for q in range(0,8):
+                    if m_data[i+p][j+q] != chess_board_W[p][q]:
+                        cnt_w += 1
+                    if m_data[i+p][j+q] != chess_board_B[p][q]:
+                        cnt_b += 1
+    
+            min_cnt = min(min_cnt, cnt_w, cnt_b)
+
+    print(min_cnt)
 
 
-            else:
-                if m_data[i][j] != ['B']:
-                    cnt_w += 1
-                else:
-                    cnt_b += 1
+    # cnt_w = 0 #W로 시작할 때
+    # cnt_b = 0 #B로 시작할 때
+
+    # for i in range(0, N):
+    #     for j in range(0, M):
+    #     # i 가 짝수일때 W 
+    #         if (i+j) % 2 == 0:
+    #             if m_data[i][j] != ['W']:
+    #                 cnt_w += 1
+    #             else:
+    #                 cnt_b += 1
 
 
-    print("cnt_w : ", f"{cnt_w}")
-    print("cnt_b : ", f"{cnt_b}")
+    #         else:
+    #             if m_data[i][j] != ['B']:
+    #                 cnt_w += 1
+    #             else:
+    #                 cnt_b += 1
+
+
+    # print("cnt_w : ", f"{cnt_w}")
+    # print("cnt_b : ", f"{cnt_b}")
 
     # if cnt_w > cnt_b:
     #     print("cnt_b : ", f"{cnt_b}")
@@ -87,7 +124,10 @@ def solution(N:int, M:int, m_data:list):
 
 if __name__ == "__main__":
     N, M = map(int, input().split())
-    m_data = [list(map(list, input())) for _ in range(N)]
+    m_data = [list(map(str, input())) for _ in range(N)]
+    # print(m_data)
+    # print(m_data[0][0])
+    
     solution(N,M,m_data)
 
 
