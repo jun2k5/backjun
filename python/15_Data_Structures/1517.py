@@ -12,25 +12,60 @@
 # 출력
 # 첫째 줄에 Swap 횟수를 출력한다
 
+import sys
+input = sys.stdin.readline
 
-def solution(N:int, data:list):
-    #버블솔트 구현
-    swp_cnt = 0
-    for i in range(0, N):
-        for j in range(0, N-i-1):
-            if data[j] > data[j+1]:
-                data[j], data[j+1] = data[j+1], data[j]
-                swp_cnt += 1
-#                print(f"{swp_cnt}" + "-swp : " + f"{data}")
+# def solution(N:int, data:list):
+#     #버블솔트 구현
+#     swp_cnt = 0
+#     for i in range(0, N):
+#         for j in range(0, N-i-1):
+#             if data[j] > data[j+1]:
+#                 data[j], data[j+1] = data[j+1], data[j]
+#                 swp_cnt += 1
+# #                print(f"{swp_cnt}" + "-swp : " + f"{data}")
 
-    print(swp_cnt)
+#     print(swp_cnt)
+############ 시간초과 #############
+#   위의 알고리즘은 O(N**2)의 시간복잡도를 가진다.
+#   따라서 병합정렬을 통해 시간복잡도를 O(N logN)으로 변경해야한다.
+
+
+
+def mergeSort(l:int, r:int):
+    global swp_cnt, data
+    if l < r:
+        m = (l + r) // 2
+        mergeSort(l,m)
+        mergeSort(m+1,r)
+
+        sl = []
+        i, j = l, m + 1
+        
+        while i <= m and j <= r:
+            if data[i] <= data[j]:
+                sl.append(data[i])
+                i += 1
+            else:
+                sl.append(data[j])
+                j += 1
+                swp_cnt = (m - i) + 1
+        if i <= m:
+            sl = sl + data[i:m+1]
+        if j <= r:
+            sl = sl + data[j:r+1]
+        
+        for x in range(len(sl)):
+            data[l + x] = sl[x]
+
 
 if __name__ == "__main__":
+    swp_cnt = 0    
     N = int(input())
     data = list(map(int, input().split()))
-
 #    print( data )
-    solution(N, data)
+    mergeSort(0, N-1)
+    print(swp_cnt)
 
 
 
