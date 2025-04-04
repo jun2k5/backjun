@@ -34,6 +34,7 @@ input = sys.stdin.readline
 
 def mergeSort(l:int, r:int):
     global swp_cnt, data
+
     if l < r:
         m = (l + r) // 2
         mergeSort(l,m)
@@ -41,7 +42,7 @@ def mergeSort(l:int, r:int):
 
         sl = []
         i, j = l, m + 1
-        
+
         while i <= m and j <= r:
             if data[i] <= data[j]:
                 sl.append(data[i])
@@ -49,7 +50,7 @@ def mergeSort(l:int, r:int):
             else:
                 sl.append(data[j])
                 j += 1
-                swp_cnt = (m - i) + 1
+                swp_cnt += m - i + 1
         if i <= m:
             sl = sl + data[i:m+1]
         if j <= r:
