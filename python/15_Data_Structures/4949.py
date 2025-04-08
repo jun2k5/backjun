@@ -22,13 +22,44 @@
 # 출력
 # 각 줄마다 해당 문자열이 균형을 이루고 있으면 "yes"를, 아니면 "no"를 출력한다.
 
-def solution():
-    ...
 
+
+# 스택 활용하기
+import sys
+input = sys.stdin.readline
+
+def solution(data:list):
+    stack = []
+
+    for i in data:
+        if i in '([':
+            stack.append(i)
+        
+        elif i == ')':
+            if not stack or stack.pop() != '(':
+                print("no")
+                return
+        
+        elif i ==']':
+            if not stack or stack.pop() != '[':
+                print("no")
+                return
+    
+    if not stack:
+        print("yes")
+    
+    else:
+        print("no")
 
 
 if __name__ == "__main__":
-    solution()
+
+    while True:
+        data = input()
+        if data[0] == '.':
+            break
+    #    print(data)
+        solution(data)
 
 
 
@@ -36,3 +67,71 @@ if __name__ == "__main__":
 
 
 
+
+################## 틀린 코드 ########################
+# import sys
+# input = sys.stdin.readline
+
+
+# def solution(data:list):
+#     chk = 0
+#     chk2 = 0
+#     cache = str([])
+
+#     for i in data:
+
+#         if i == '(' and cache.isalpha():
+#             print("no")
+#             break
+
+#         if i == ')' and chk == 0:
+#             print("no")
+#             break
+
+#         if i == '(':
+#             chk += 1
+
+#         if i == ')':
+#             chk -= 1
+
+#         if i == '[' and cache.isalpha():
+#             print("no")
+#             break
+
+#         if i == ']' and chk2 == 0:
+#             print("no")
+#             break
+
+#         if i == '[':
+#             chk2 += 1
+#         if i == ']':
+#             chk2 -= 1
+
+#         cache = i
+
+#         if i == '.':
+#             if chk == 0 and chk2 == 0:
+#                 print("yes")
+#             else:
+#                 print("no")
+
+
+
+# if __name__ == "__main__":
+
+#     while True:
+#         data = list(str(input()))
+#         if data[0] == '.':
+#             break
+
+#         solution(data)
+
+
+
+
+# 입력	기존 코드 결과	수정 코드 결과
+# ([)]. 	yes	            no
+# ([]).	    yes	            yes
+# ([)].	    yes         	no
+# ([[]]).	yes	            yes
+# ([[]].	no	            no
