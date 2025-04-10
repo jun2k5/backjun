@@ -27,6 +27,16 @@ def solution(data:list, N, M):
 
     queue = deque()
     queue.append(0,0)
+
+    while queue:
+        x, y = queue.popleft()
+
+        for i in range(4):
+            nx, ny = x+dx[i], y+dy[i]
+            if 0<= nx < N and 0 <= ny < M:
+                if data
+
+
     
 
 
