@@ -26,7 +26,7 @@ def solution(data:list, N, M):
     dy = [0,0,-1,1]
 
     queue = deque()
-    queue.append(0,0)
+    queue.append((0,0))
 
     while queue:
         x, y = queue.popleft()
@@ -34,10 +34,11 @@ def solution(data:list, N, M):
         for i in range(4):
             nx, ny = x+dx[i], y+dy[i]
             if 0<= nx < N and 0 <= ny < M:
-                if data
+                if data[nx][ny] == 1:
+                    data[nx][ny] = data[x][y]+1
+                    queue.append((nx,ny))
 
-
-    
+    print(data[-1][-1])
 
 
 
