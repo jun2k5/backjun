@@ -31,6 +31,6 @@ def solution(data:list):
     
 if __name__ == "__main__":
     data = [int(input()) for _ in range(5)]
-    print(data)
+#    print(data)
 
     solution(data)
