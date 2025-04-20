@@ -12,7 +12,8 @@
 
 
 def solution(N:int, data:list):
-    data.sort()
+
+    data.sort(key = lambda x : (x[1], x[0]))
 
     for i in range(N):
         print(f"{data[i][0]} " + f"{data[i][1]}")
