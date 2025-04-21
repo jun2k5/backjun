@@ -10,6 +10,19 @@
 # 출력
 # 첫째 줄부터 N개의 줄에 점을 정렬한 결과를 출력한다.
 
+# def ySort(data:list):
+#     sortedData = []
+
+#     for i in range(len(data)-1):
+#         for j in range(i + 1, len(data)):
+#             if data[i] > data[j]:
+#                 data[i], data[j] = data[j], data[i]
+        
+# def solution(N:int, data:list):
+   
+
+#     for i in range(N):
+#         print(f"{data[i][0]} " + f"{data[i][1]}")
 
 def solution(N:int, data:list):
 
