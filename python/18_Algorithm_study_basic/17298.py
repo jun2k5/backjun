@@ -36,6 +36,9 @@ def solution(N, data:list):
 
 
 ######################런타임 에러###########################
+######################시간 초과 ############################
+    # data_count = Counter(data)
+
     # for i in range(N):
     #     find = False
     #     for j in range(i+1, N):
