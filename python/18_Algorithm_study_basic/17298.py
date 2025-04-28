@@ -1,6 +1,6 @@
 # 오큰수
 # 시간 제한	메모리 제한	제출	정답	맞힌 사람	정답 비율
-# 1 초	512 MB	103482	38510	26824	35.208%
+# 1 초	512 MB	103496	38514	26828	35.210%
 # 문제
 # 크기가 N인 수열 A = A1, A2, ..., AN이 있다. 수열의 각 원소 Ai에 대해서 오큰수 NGE(i)를 구하려고 한다. Ai의 오큰수는 오른쪽에 있으면서 Ai보다 큰 수 중에서 가장 왼쪽에 있는 수를 의미한다. 그러한 수가 없는 경우에 오큰수는 -1이다.
 
@@ -13,36 +13,33 @@
 # 총 N개의 수 NGE(1), NGE(2), ..., NGE(N)을 공백으로 구분해 출력한다.
 
 
-
 import sys
-from collections import Counter
 input = sys.stdin.readline
 
 def solution(N, data:list):
-####################수정코드#############################
 
-    data_count = Counter(data)
+###############수정 코드#################
     stack = []
-    result = [-1] * N
     stack.append(0)
-    
-    for i in range(N):
-        while stack and data_count[data[stack[-1]]] < data_count[data[i]]:
+    result = [-1] * N
+
+    for i in range(1, N):
+        while stack and data[stack[-1]] < data[i]:
             result[stack.pop()] = data[i]
         stack.append(i)
-    
-    for i in result:
-        print(i, end=' ')
+
+    print(*result)
 
 
-######################런타임 에러###########################
-######################시간 초과 ############################
-    # data_count = Counter(data)
+
+
+
+###############시간 초과##################
 
     # for i in range(N):
     #     find = False
-    #     for j in range(i+1, N):
-    #         if data_count[data[i]] < data_count[data[j]]:
+    #     for j in range(i, N):
+    #         if data[i] < data[j]:
     #             print(data[j], end = ' ')
     #             find = True
     #             break
@@ -57,5 +54,8 @@ if __name__ == "__main__":
     data = list(map(int, input().split()))
 
     solution(N, data)
+
+
+
 
 
