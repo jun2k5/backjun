@@ -16,11 +16,10 @@ input = sys.stdin.readline
 
 def solution(data: str):
     result = ""
-    for i in range(len(data)):
-        result += str(bin(int(data[i])))[2:].zfill(3)
-    print(result.lstrip('0'))
-
-
+    for i in data:
+        result += str(bin(int(i, 8)))[2:].zfill(3)
+    print(result.lstrip('0') or '0')
+#
 if __name__ == "__main__":
     data = input().rstrip()
     solution(data)
