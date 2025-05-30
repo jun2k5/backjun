@@ -21,27 +21,21 @@ import sys
 input = sys.stdin.readline
 
 def solution(now_channel:int , N:int, M:int, break_buttons:list):
-    # 현재 채널에서 N으로 이동하는데 필요한 최소 버튼 수
-    min_button_count = abs(now_channel - N)
+    min_count = abs(now_channel - N) 
 
-    # 고장난 버튼이 없는 경우
-    if M == 0:
-        print(min_button_count)
+    if M == 10:
+        print(min_count)
         return
 
-    for nums in range(1000001):
-        nums = str(nums)
-
-        for j in range(len(nums)):
-            # 각 숫자가 고장났는지 확인 후, 고장 났으면 break
-            if int(nums[j]) in break_buttons:
+    for i in range(1000001):
+        num = str(i)
+        for j in range(len(num)):
+            if int(num[j]) in break_buttons:
                 break
-
-            # 고장난 숫자 없이 마지막 자리까지 왔다면 min_count 비교 후 업데이트
-            elif j == len(nums) - 1:
-                min_button_count = min(min_button_count, abs(int(nums) - N) + len(nums))
-
-    print(min_button_count)
+        else:
+            min_count = min(min_count, abs(N - i) + len(num))
+                
+    print(min_count)    
 
 if __name__ == "__main__":
     now_channel = 100
@@ -50,4 +44,6 @@ if __name__ == "__main__":
     break_buttons = list(map(int, input().split()))
 
     solution(now_channel, N, M, break_buttons)
+
+
 
