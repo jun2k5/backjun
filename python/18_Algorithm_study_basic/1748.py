@@ -25,6 +25,7 @@ def solution(N: int) -> None:
         count += (end - start + 1) * digit
         digit += 1
         start *= 10
+        
     print(count)
 
 
