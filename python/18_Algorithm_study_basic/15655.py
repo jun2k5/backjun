@@ -1,10 +1,11 @@
-# N과 M (5)
+# N과 M (6)
 # 시간 제한	메모리 제한	제출	정답	맞힌 사람	정답 비율
-# 1 초	512 MB	50129	36470	28899	72.159%
+# 1 초	512 MB	28949	24176	19316	84.034%
 # 문제
 # N개의 자연수와 자연수 M이 주어졌을 때, 아래 조건을 만족하는 길이가 M인 수열을 모두 구하는 프로그램을 작성하시오. N개의 자연수는 모두 다른 수이다.
 
 # N개의 자연수 중에서 M개를 고른 수열
+# 고른 수열은 오름차순이어야 한다.
 # 입력
 # 첫째 줄에 N과 M이 주어진다. (1 ≤ M ≤ N ≤ 8)
 
@@ -19,26 +20,23 @@
 import sys
 input = sys.stdin.readline
 
-def solution(n: int, m: int, numbers:list) -> None:
+def solution(n: int, m: int, numbers: list) -> None:
     visited = [False] * n
-    def dfs(path: list) -> None:
+    def dfs(start: int, path: list) -> None:
         if len(path) == m:
             print(" ".join(map(str, path)))
             return
         
-        for i in range(n):
+        for i in range(start, n):
             if not visited[i]:
                 visited[i] = True
-                dfs(path + [numbers[i]])
+                dfs(i + 1, path + [numbers[i]])
                 visited[i] = False
 
-    dfs([])
+    numbers.sort()
+    dfs(0, [])
     
 if __name__ == "__main__":
     n, m = map(int, input().split())
     numbers = list(map(int, input().split()))
-    numbers.sort()
     solution(n, m, numbers)
-
-
-    
